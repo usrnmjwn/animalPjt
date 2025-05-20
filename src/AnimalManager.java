@@ -40,25 +40,12 @@ public class AnimalManager {
             int num = sc.nextInt();
             JDBCImpls oj = new JDBCImpls();
             switch (num) {
-                case 1:
-                    oj.executeJDBC("Mammals");
-                    break;
-                case 2:
-                    oj.executeJDBC("Birds");
-                    break;
-                case 3:
-                    oj.executeJDBC("Reptiles");
-                    break;
-                case 4:
-                    oj.executeJDBC("Amphibians");
-                    break;
-                case 0:
-                    isRun = false;
-                    break;
-
-                default:
-                    System.out.println("잘못된 입력입니다");
-                    break;
+                case 1 -> oj.readAllData("Mammals");
+                case 2 -> oj.readAllData("Birds");
+                case 3 -> oj.readAllData("Reptiles");
+                case 4 -> oj.readAllData("Amphibians");
+                case 0 -> isRun = false;
+                default -> System.out.println("잘못된 입력입니다");
             }
 
         }
