@@ -40,10 +40,10 @@ public class AnimalManager {
             int num = sc.nextInt();
             JDBCImpls oj = new JDBCImpls();
             switch (num) {
-                case 1 -> oj.readAllData("Mammals");
-                case 2 -> oj.readAllData("Birds");
-                case 3 -> oj.readAllData("Reptiles");
-                case 4 -> oj.readAllData("Amphibians");
+                case 1 -> oj.readAllData(TableNames.MAMMALS);
+                case 2 -> oj.readAllData(TableNames.BIRDS);
+                case 3 -> oj.readAllData(TableNames.REPTILES);
+                case 4 -> oj.readAllData(TableNames.AMPHIBIANS);
                 case 0 -> isRun = false;
                 default -> System.out.println("잘못된 입력입니다");
             }
@@ -73,15 +73,14 @@ public class AnimalManager {
                     System.out.println("전체 동물 목록 조회"); // findAllAnimals
                     System.out.println();
                     findAllAnimals();
-                    // 조회함수
                     break;
                 case 2:
-                    System.out.println("동물 정보 조회"); // findAnimal -> updateAnimalInfo (수정메서드)
+                    System.out.println("동물 정보 조회"); 
                     System.out.println();
                     findAnimal();
                     break;
                 case 3:
-                    System.out.println("새로운 동물 추가"); // add AnimalInfo
+                    System.out.println("새로운 동물 추가"); 
                     System.out.println();
                     addAnimalInfo();
                     break;
