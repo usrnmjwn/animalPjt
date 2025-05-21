@@ -50,7 +50,7 @@ public class JDBCImpls {
                 String branch = rs.getString("BRANCH");
                 String location = rs.getString("LOCATION");
 
-                System.out.printf("%s  ||  %s  ||  %s  에 위치 \n",
+                System.out.printf("%s  ||  %s  ||  %s  ||  %s 에 위치 \n",
                         name, ordinal, branch, location);
             }
 
@@ -86,7 +86,7 @@ public class JDBCImpls {
                     String branch = rs.getString("BRANCH");
                     String location = rs.getString("LOCATION");
 
-                    System.out.printf("ID: %s || %s || %s || %s 에 위치 \n",
+                    System.out.printf("ID: %s  ||  %s  ||  %s  ||  %s  ||  %s 에 위치 \n",
                             id, dataName, ordinal, branch, location);
                 } while (rs.next()); // 다음 행이 있으면 반복
             }
@@ -122,7 +122,7 @@ public class JDBCImpls {
                     String branch = rs.getString("BRANCH");
                     String location = rs.getString("LOCATION");
 
-                    System.out.printf("ID: %s || %s || %s || %s 에 위치 \n",
+                    System.out.printf("ID: %s  ||  %s  ||  %s  ||  %s 에 위치 \n",
                             id, dataName, ordinal, branch, location);
                 } while (rs.next()); // 다음 행이 있으면 반복
             }

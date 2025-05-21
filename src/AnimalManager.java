@@ -6,18 +6,6 @@ public class AnimalManager {
     public static Scanner sc;
     public static Map<Integer, String> map;
 
-    // 생성자에 바로 run 코드 추가
-    public AnimalManager() {
-        System.out.println("-----------------------------------------------");
-        System.out.println();
-        System.out.println("*** 원하는 번호를 입력하세요 ***");
-        System.out.println();
-        System.out.println(">> 1. 전체 동물 목록 조회");
-        System.out.println(">> 2. 동물 정보 조회");
-        System.out.println(">> 3. 새로운 동물 추가");
-        System.out.println(">> 0. 종료");
-    }
-
     // 1번 테이블 내 전체 동물 조회 
     private void findAllAnimals() {
         System.out.println("-----------------------------------------------");
@@ -59,7 +47,7 @@ public class AnimalManager {
 
     // 3번 새로운 동물 정보 추가
     private void addAnimalInfo() {
-        JDBCImpls oj = new JDBCImpls();
+        // JDBCImpls oj = new JDBCImpls();
         // TODO: 나중에 삭제
 
         // System.out.println("포유류에 추가");
@@ -83,6 +71,14 @@ public class AnimalManager {
         boolean isRun = true;
 
         while (isRun) {
+            System.out.println("-----------------------------------------------");
+            System.out.println();
+            System.out.println("*** 원하는 번호를 입력하세요 ***");
+            System.out.println();
+            System.out.println(">> 1. 전체 동물 목록 조회");
+            System.out.println(">> 2. 동물 정보 조회");
+            System.out.println(">> 3. 새로운 동물 추가");
+            System.out.println(">> 0. 종료");
 
             Scanner sc = new Scanner(System.in);
             int num = sc.nextInt();
