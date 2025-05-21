@@ -20,11 +20,10 @@ public class AnimalManager {
 
         boolean isRun = true;
         sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        JDBCImpls oj = new JDBCImpls();
 
-        while (isRun) {
-            int num = sc.nextInt();
-            JDBCImpls oj = new JDBCImpls();
-            switch (num) {
+        switch (num) {
                 case 1 -> oj.readAllData("Mammals");
                 case 2 -> oj.readAllData("Birds");
                 case 3 -> oj.readAllData("Reptiles");
@@ -33,7 +32,6 @@ public class AnimalManager {
                 default -> System.out.println("잘못된 입력입니다");
             }
 
-        }
 
     }
 
@@ -83,7 +81,69 @@ public class AnimalManager {
 
 
     // 3번 새로운 동물 정보 추가
+    
     private void addAnimalInfo() {
+        sc = new Scanner(System.in);
+        JDBCImpls oj = new JDBCImpls();
+
+        System.out.println("어느 분류에 동물을 추가하시겠습니까?");
+        System.out.println(">> 1. 포유류");
+        System.out.println(">> 2. 조류");
+        System.out.println(">> 3. 파충류");
+        System.out.println(">> 4. 양서류");
+        System.out.print("입력: ");
+
+        int choice = sc.nextInt();
+        sc.nextLine(); // 버퍼 비우기
+
+        String table = "";
+        
+        switch (choice) {
+            case 1:
+                table = "Mammals";
+                break;
+            case 2:      
+                table = "Birds";
+                break;
+            case 3:
+                table = "Reptiles";
+                break;
+            case 4:
+                table = "Amphibians";
+                break;
+            default:
+                System.out.println("잘못된 선택입니다.");
+            return;
+            
+        };
+
+        // 사용자로부터 동물 정보 입력 받기
+        System.out.print("동물 이름: ");
+        String name = sc.nextLine();
+
+        System.out.print("목 (예: 기제목, 영장목 등): ");
+        String info1 = sc.nextLine();
+
+        System.out.print("과 (예: 테이퍼과, 긴팔원숭이과 등): ");
+        String info2 = sc.nextLine();
+
+        System.out.print("위치 (예: 남미관, 동양관 등 ");
+        String info3 = sc.nextLine();
+        System.out.println();
+
+
+        // DB에 삽입 요청, 성공 또는 실패 메세지와 에러발생시 내용
+        try {
+            oj.createData(table, name, info1, info2, info3);
+            System.out.println("새로운 동물이 추가되었습니다!");
+            
+        } catch (Exception e) {
+            System.out.println("동물 추가가 실패했습니다.");
+            e.printStackTrace();
+        }
+
+    };
+
         // JDBCImpls oj = new JDBCImpls();
         // TODO: 나중에 삭제
 
@@ -102,7 +162,7 @@ public class AnimalManager {
         // System.out.println("삭제");
         // oj.deleteData("Mammals", "이름");
 
-    }
+
     
     public void run() {
         boolean isRun = true;
