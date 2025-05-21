@@ -35,15 +35,50 @@ public class AnimalManager {
 
     }
 
-    // 2번 특정 동물 정보 조회 
+    // 2번 특정 동물 정보 조회 (이름 검색 기능만)
     private void findAnimal() {
+        Scanner sc = new Scanner(System.in);
+        JDBCImpls oj = new JDBCImpls();
 
-    
-        // TODO: 나중에 삭제
-        // JDBCImpls oj = new JDBCImpls();
-        // System.out.println("사자 비슷한거 찾기");
-        // oj.readSimilarData("Mammals", "사자");
+        System.out.println("검색할 동물의 테이블을 선택하세요.");
+        System.out.println(">> 1. 포유류 (Mammals)");
+        System.out.println(">> 2. 조류 (Birds)");
+        System.out.println(">> 3. 파충류 (Reptiles)");
+        System.out.println(">> 4. 양서류 (Amphibians)");
+        System.out.print("입력: ");
+        int choice = sc.nextInt();
+        sc.nextLine(); // 개행 제거
+
+        String tableName = "";
+        switch (choice) {
+            case 1:
+                tableName = "Mammals";
+                break;
+            case 2:
+                tableName = "Birds";
+                break;
+            case 3:
+                tableName = "Reptiles";
+                break;
+            case 4:
+                tableName = "Amphibians";
+                break;
+            default:
+                System.out.println("잘못된 선택입니다.");
+                return;
+        }
+
+        // 검색
+        System.out.println("조회");
+        System.out.print("검색할 이름 입력: ");
+        String keyword = sc.next();
+
+        System.out.println(keyword);
+        System.out.println("oj.readsimilar 메서드 실행 전");
+        oj.readSimilarData(tableName, keyword);
     }
+
+
 
     // 3번 새로운 동물 정보 추가
     
