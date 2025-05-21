@@ -20,11 +20,10 @@ public class AnimalManager {
 
         boolean isRun = true;
         sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        JDBCImpls oj = new JDBCImpls();
 
-        while (isRun) {
-            int num = sc.nextInt();
-            JDBCImpls oj = new JDBCImpls();
-            switch (num) {
+        switch (num) {
                 case 1 -> oj.readAllData("Mammals");
                 case 2 -> oj.readAllData("Birds");
                 case 3 -> oj.readAllData("Reptiles");
@@ -33,7 +32,6 @@ public class AnimalManager {
                 default -> System.out.println("잘못된 입력입니다");
             }
 
-        }
 
     }
 
