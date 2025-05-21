@@ -38,7 +38,6 @@ public class AnimalManager {
     }
 
     // 2번 특정 동물 정보 조회 (이름 검색 기능만)
-    // 2번 특정 동물 정보 조회 (이름 검색 기능만)
     private void findAnimal() {
         Scanner sc = new Scanner(System.in);
         JDBCImpls oj = new JDBCImpls();
@@ -76,6 +75,8 @@ public class AnimalManager {
         System.out.print("검색할 이름 입력: ");
         String keyword = sc.next();
 
+        System.out.println(keyword);
+        System.out.println("oj.readsimilar 메서드 실행 전");
         oj.readSimilarData(tableName, keyword);
     }
 

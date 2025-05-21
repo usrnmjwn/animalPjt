@@ -107,7 +107,7 @@ public class JDBCImpls {
                         tableName);
                 Connection conn = JDBCUtils.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql);
-                pstmt.setString(1, name);
+                pstmt.setString(1, "%" + name + "%");
                 ResultSet rs = pstmt.executeQuery();
 
                 if (!rs.next()) {

@@ -1,6 +1,30 @@
 {
+  // 외부 라이브러리 참조
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
-    "c:\\Users\\bit\\Downloads\\ojdbc17.jar"
-  ]
+    "C:/Users/bit/Downloads/ojdbc17.jar"
+  ],
+
+  // Java 실행 시 UTF-8 인코딩 설정
+  "terminal.integrated.env.windows": {
+    "JAVA_TOOL_OPTIONS": "-Dfile.encoding=UTF-8"
+  },
+
+  // 저장 파일 인코딩을 UTF-8로 고정
+  "files.encoding": "utf8",
+
+  // Code Runner 확장 사용하는 경우 설정
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "java": "cd $dir && javac $fileName && java -Dfile.encoding=UTF-8 $fileNameWithoutExt"
+  },
+
+  // PowerShell 실행 시 자동으로 chcp 65001 명령 실행
+  "terminal.integrated.profiles.windows": {
+    "PowerShell (UTF-8)": {
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "args": ["-NoExit", "-Command", "chcp 65001"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell (UTF-8)"
 }
