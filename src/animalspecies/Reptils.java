@@ -3,16 +3,16 @@ package animalspecies;
 public class Reptils {
     public int id;
     public String name;
-    public String animaltype;
-    public String animalfamily;
-    public String parkArea;
+    public String ordinal;
+    public String branch;
+    public String location;
 
-    public Reptils(int id, String name, String animaltype, String animalfamily, String parkArea) {
+    public Reptils(int id, String name, String ordinal, String branch, String location) {
         this.id = id;
         this.name = name;
-        this.animalfamily = animalfamily;
-        this.animaltype = animaltype;
-        this.parkArea = parkArea;
+        this.ordinal = ordinal;
+        this.branch = branch;
+        this.location = location;
     }
     
 }
