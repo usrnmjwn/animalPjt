@@ -96,6 +96,8 @@ public class AnimalManager {
 
         System.out.print("위치 (예: 남미관, 동양관 등 ");
         String info3 = sc.nextLine();
+        System.out.println();
+
 
         // DB에 삽입 요청, 성공 또는 실패 메세지와 에러발생시 내용
         try {
