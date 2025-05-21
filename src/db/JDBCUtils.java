@@ -7,11 +7,10 @@ public class JDBCUtils {
 
 
     public static Connection getConnection() {
-        try { 
-            // 문자셋 옵션 추가
-            String url = "jdbc:oracle:thin:@//localhost:39161/XE";
-            String user = "zoo";
-            String password = "1234";
+        try {
+            String url = "jdbc:oracle:thin:@//localhost:1521/XE";
+            String user = "bituser";
+            String password = "bituser";
             Class.forName("oracle.jdbc.OracleDriver");
             // 연결 설정
             return DriverManager.getConnection(url, user, password);
@@ -23,3 +22,4 @@ public class JDBCUtils {
     }
 
 }
+
